@@ -1,2 +1,0 @@
-server:
-  port: ${app_port:8080}
