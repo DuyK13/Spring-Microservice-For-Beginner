@@ -21,14 +21,17 @@ Finally, in the application.properties I have change to application.yml.
 - fetch-registry and register-with-eureka set false to make eureka server not fetch registry and register itself
 - defaultZone: it bases on the host name and port
 
+For all thing I mention above, you can read this document: [spring-cloud-eureka-server-standalone-mode](https://docs.spring.io/spring-cloud-netflix/docs/current/reference/html/#spring-cloud-eureka-server-standalone-mode)
 ### **2.** Create config service using spring-cloud-config-server
 
 My dependencies below:
 
 - spring-cloud-config-server: using for enable Config server-side to run all client config application.yml
 
-In application.yml, I set up profile is native, so that we find config files in **search-locations** folder, in here it is config folder
+The syntax of the config file in the following form: {application}-{profile}.{yml/properties}
 
-We can set multiple config file for a service by using syntax "{service name}-{profile}". Profile mean it can be admin, user, test, database,...
+To enable Config server in service, we use @EnableConfigServer annotation in main class
 
-I have a default.yml for all services use it to connect to the eureka server in port 8761, and it auto fetch data to eureka server
+In this, I run my config service in the local, so I use the "**native**" profile in my application.yml. Then use "**search-location**" to point to the path of folder contains config files
+
+You can read the document in here: [spring_cloud_config_server](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server)

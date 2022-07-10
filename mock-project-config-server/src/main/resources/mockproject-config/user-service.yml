@@ -1,0 +1,12 @@
+feign:
+  circuitbreaker:
+    enabled: true
+  hystrix:
+    enabled: true
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: web
+      client-secret: pin

@@ -1,0 +1,20 @@
+spring:
+    data:
+        jpa:
+            repositories:
+                enabled: true
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: sapassword
+        url: jdbc:mysql://localhost:3306/orderService?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=Asia/Ho_Chi_Minh
+        username: root
+    jpa:
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+                format_sql: true
+        show-sql: false
+        open-in-view: false
